@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result_styles.css') }}">
+</head>
+<body>
+    <h1>Diabetes Prediction Result</h1>
+    
+    {% if prediction == 1 %}
+        <p>The model predicts: The person has diabetes with a probability of {{ probability }}%. 😟</p>
+    {% else %}
+        <p>The model predicts: The person does not have diabetes with a probability of {{ probability }}%. 😃</p>
+    {% endif %}
+
+    <a href="/">Go back to home</a>
+</body>
+</html>
